@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Two guys & A Beer </title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id='container'>
+        <div id='audio-img'>
+            <img class = 'cover' src="" alt="">
+        </div>        
+        <div id='audio-player'>
+            <div id='audio-info'>
+                <span class="artist"></span> - <span class="title"></span>
+            </div>
+            <input id="volume" type="range" min='0', max='100', value='50'>
+            <br>
+            		 <div id="buttons">
+		 <span>
+			<button id="prev"></button>
+			<button id="play"></button>
+			<button id="pause"></button>
+			<button id="stop"></button>
+			<button id="next"></button>
+			</span>
+		 </div>
+		 <div class="clearfix"></div>
+		 <div id="tracker">
+			<div id="progressBar">
+				<span id="progress"></span>
+			</div>
+			<span id="duration"></span>
+		 </div>
+		 <div class="clearfix"></div>
+            <ul id='playlist'>  
+                    <li song="episode_1.1_Pilot.m4a" cover="2beers.jpg" artist="DeJuan & Jerry">Pilot Podcast</li>
+                    <li song="episode_2.m4a" cover="podcast-icon.jpg" artist="Linkin Park">Episode 02</li>
+                    <li song="episode_3.m4a" cover="cover1.jpg" artist="Linkin Park">Episode 03</li>
+                    <li song="episode_4.m4a" cover="cover1.jpg" artist="Linkin Park">Episode 04</li>
+                    <li song="episode_5.m4a" cover="cover1.jpg" artist="Linkin Park">Episode 05</li>
+                    <li song="episode_6.m4a" cover="cover1.jpg" artist="Linkin Park">Episode 06</li>
+        
+            </ul>
+        </div>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
