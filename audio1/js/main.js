@@ -82,6 +82,13 @@ $('#prev').click(function(){
     showDuration();
 });
 
+
+// Volume Control
+$('#volume').change(function(){
+    audio.volume=parseFloat(this.value / 100)
+})
+
+
 //Time Duration
 function showDuration(){
     $(audio).bind('timeupdate', function() {
@@ -98,5 +105,31 @@ function showDuration(){
             value = Math.floor((100 / audio.duration) * audio.currentTime);
         }
         $('#progress').css('width',value+'%');
+
+        $("#progressBar").mouseup(function(e){
+            var leftOffset = e.pageX - $(this).offset().left;
+            var songPercents = leftOffset / $('#progressBar').width();
+         audio.currentTime = songPercents * audio.duration;
+        });﻿
+        
     });
 }
+
+
+
+
+
+
+
+
+//After song ends play next song
+$(audio).on("ended", function() {
+    audio.pause();
+    var next = $('#playlist li.active').next();
+    if (next.length == 0) {
+        next = $('#playlist li:first-child');
+    }
+    initAudio(next);
+ audio.play();
+ showDuration();
+});﻿
